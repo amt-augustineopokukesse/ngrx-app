@@ -1,0 +1,43 @@
+continuation...
+
+*NGRX setup*
+installing all the libraries
+
+- npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools @ngrx/router-store
+
+Start creating actions and reducers
+- create customer.model.ts file/ customer.ts file to house your type interface
+- create your service file 
+- create your state folder to hold your actions and reducers
+- add your store module and customer reducer to the CustomersModule
+- create your actions and reducers
+
+NGRX effects and selectors
+Create angular effects/side effects to fetch the data from the server, add the data to the store, and display it in the component.
+- Reducers are pure functions but some actions create side effects eg. when communicating with an external server.
+To handle such effects, we use the ngrx effects in our applications which listens for an action to be dispatched,
+use a service to communicate to the server and once they get a response, they dispatch another action that then
+will be taken by the reducer.
+
+--- adduser$ = createEffect(() => {
+  // ...
+});
+In this context, adduser$ is a convention used to indicate that adduser$ is an observable. 
+The $ at the end of the variable name is not a special operator but is often used as a naming 
+convention to denote that a variable holds an observable.
+
+The $ sign at the end of an observable variable's name is not required, but it has become a 
+common practice in the RxJS and NgRx communities to help developers quickly identify that a 
+variable represents an observable stream.
+
+- Add the effect module and its respective file to the respective module and and include it in the imports
+
+NgRx selectors
+Selectors are functions that subscribe to slices of the state and communicate the changes to the components.
+
+Entity 
+It helps us to manage collections of objects
+Reduce the amount of code for CRUD operations.
+Adds IDs and entities to the state which has some performance implications
+
+
